@@ -38,5 +38,6 @@ STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR),'static')),  #De dond
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #define el acceso a la carpeta media (la cual contendrá los archivos dinámicos que utilizarán nuestras plantillas, como puede ser una foto de perfil que suba un usuario que se registra).
-MEDIA_URL = './media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')  
+#MEDIA_ROOT= BASE_DIR / "media/media"

@@ -15,15 +15,25 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
 from .views import index
+
+
+'''
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns 
+'''
+
+
 #from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name = 'index'),   # http://127.0.0.1:8000/ Equivale a: www.mipagina.com (que es la coilla simple vacia) De esa manera entro al html principal
-    #en este caso index.
-    # path('', IndexView.as_view(), name = 'index'),  
+    path('', index, name = 'index'),   # http://127.0.0.1:8000/ Equivale a: www.mipagina.com (que es la coilla simple vacia)
+    #De esa manera entro al html principal en este caso index.
+    path('', include('apps.posts.urls')),
+    #path('posts/', posts, name = 'posts'),
     #pass
     
 ]

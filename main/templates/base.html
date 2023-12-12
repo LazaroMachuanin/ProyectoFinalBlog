@@ -2,7 +2,8 @@
 <!doctype html>
 <html lang="es-ar">
     <head>
-        <title>{% block title %}Pagina Info{% endblock title %}</title>
+    
+        <title>{% block title %}Pagina de inicio{% endblock title %}</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -18,16 +19,30 @@
             crossorigin="anonymous"
         />
     </head>
-
+            
     <body>
         <header>
+            <a class="flex-sm-fill text-sm-center nav-link active" href="#">
+                <img src="{% static 'imagen/prueba.jpg' %}"style="max-width: 300px; margin: 30px">
+            </a>
+
             <!-- place navbar here -->
+            <nav class="nav justify-content-center  ">
+                <a class="nav-link active" href="#" aria-current="page">Home</a>
+                <a class="nav-link" href="#">Post</a>
+                <a class="nav-link" href="#">Acerca de</a>
+                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link disabled" href="#">Disabled link</a>
+            </nav>
         </header>
         <!--<main></main>-->
 {% block contenido %}
 
 {% endblock %}
+
         <footer>
+
+            Esto es el oie de la Pagina 
             <!-- place footer here -->
         </footer>
         <!-- Bootstrap JavaScript Libraries -->
