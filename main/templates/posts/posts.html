@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<center>
+<div class="container-fluid" style="margin: 100px;"> 
+    {% for i in posts %}
+        <br>
+        <li>{{ i.titulo }}</li>
+        <li>{{ i.subtitulo }}</li>
+        <li>{{ i.categoria }}</li>
+        <br>
+        {% if i.imagen %}
+            <img src="{{ i.imagen.url }}" alt="">
+        {% else %}
+            <p>No hay imagen disponible</p>
+        {% endif %}
+
+        <a id="boton_post" href=""> 
+            ingresa a este Post
+        </a>
+
+            {% empty %} 
+            <li>no hay registros</li>
+
+    {% endfor %}
+</div>    
+        
+</center>
+<!--<h1>Blog Tecnologia 2023 - Estamos en Blog</h1>-->
+<!--% url 'apps.posts: posts_individual' i.id %}-->
+
+{% endblock contenido %}
+

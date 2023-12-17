@@ -8,3 +8,4 @@ class PostsAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(Categoria)
+# Register your models here.

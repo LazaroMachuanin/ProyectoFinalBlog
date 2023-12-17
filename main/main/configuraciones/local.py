@@ -20,13 +20,22 @@ TEMPLATES = [
     },
 ]
 
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR  / 'db.sqlite3',
-        #'NAME': BASE_DIR / 'db.sqlite3',
-
+    }
+}
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'blogwebdb',
+        'USER': 'root',
+        'PASSWORD': '1111',
+        'HOST': 'localhost',
+        
     }
 }
 
@@ -38,5 +47,28 @@ STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR),'static')),  #De dond
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #define el acceso a la carpeta media (la cual contendrá los archivos dinámicos que utilizarán nuestras plantillas, como puede ser una foto de perfil que suba un usuario que se registra).
-MEDIA_URL = './media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')  
+#MEDIA_ROOT= BASE_DIR / "media/media"
+
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Configuración para la clave primaria automática (si estás usando Django 3.2+)
+#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Define el acceso a la carpeta media que contendrá los archivos dinámicos
+#MEDIA_URL = '/media/'
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+
+
+#import os
+
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+

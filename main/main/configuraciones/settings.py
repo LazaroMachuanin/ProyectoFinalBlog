@@ -27,6 +27,8 @@ SECRET_KEY = 'django-insecure-k81**!xj_n+1zmdm0@@*5^hgb7c^dpfft-9spr#sqp1)z+r5f(
 
 ALLOWED_HOSTS = []
 
+#AUTH_USER_MODEL ='usuario.usuario' #agregamos para usuario
+#AUTH_USER_MODEL ='usuario.Usuario'
 
 # Application definition
 
@@ -38,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'apps.posts'
+    'apps.posts',
+    'apps.contacto',
+    #'apps.usuario',
+    
 ]
 
 MIDDLEWARE = [
