@@ -50,25 +50,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),'media')  
 #MEDIA_ROOT= BASE_DIR / "media/media"
-
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Configuración para la clave primaria automática (si estás usando Django 3.2+)
-#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-# Define el acceso a la carpeta media que contendrá los archivos dinámicos
-#MEDIA_URL = '/media/'
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-
-
-
-#import os
-
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#MEDIA_URL = '/media/'
-#MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-

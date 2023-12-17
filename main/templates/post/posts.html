@@ -16,10 +16,9 @@
         {% else %}
             <p>No hay imagen disponible</p>
         {% endif %}
-
-        <a id="boton_post" href=""> 
+        {% comment %} <a id="boton_post" href="{% url 'apps.posts: posts_individual' i.id %}">
             ingresa a este Post
-        </a>
+        </a>{% endcomment %}
 
             {% empty %} 
             <li>no hay registros</li>
@@ -29,7 +28,6 @@
         
 </center>
 <!--<h1>Blog Tecnologia 2023 - Estamos en Blog</h1>-->
-<!--% url 'apps.posts: posts_individual' i.id %}-->
 
 {% endblock contenido %}
 

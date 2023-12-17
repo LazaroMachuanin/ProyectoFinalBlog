@@ -1,23 +1,16 @@
+#from django.views.generic import templateView
 from django.shortcuts import render
 from .models import Post
-from django.views.generic import ListView, DetailView
+#VISTA BASADAS EN FUNCIONES 
+def posts(request):
+    posts= Post.objects.all()
+    return render(request, 'post/posts.html', {'posts' : posts})
+    #, request.FILES
 
-# Vista basada en funciones
-# def posts(request):
-#     posts = Post.objects.all()
-#     return render(request, 'posts.html', {'posts' : posts})
-
-#Vista basada en clases para la lista de posts
-class PostListView(ListView):
-    model = Post
-    template_name = 'posts/posts.html'
-    context_object_name = 'posts'
+'''
+class IndexView(templateView):
+        template_name ='index.html'
     
-# Vista basada en clases para posts individual   
-class PostDetailView(DetailView):
-    model = Post
-    template_name = 'posts/post_individual.html'
-    context_object_name = 'posts'
-    pk_url_kwarg = "id"
-    queryset =Post.objects.all()
-# Create your views here.
+    
+    #def get(delf, request):
+        #return render(request, 'index.html')'''

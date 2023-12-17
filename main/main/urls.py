@@ -17,10 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from .views import index
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from .views import about, registro
 
 
 '''
@@ -37,17 +33,7 @@ urlpatterns = [
     path('', index, name = 'index'),   # http://127.0.0.1:8000/ Equivale a: www.mipagina.com (que es la coilla simple vacia)
     #De esa manera entro al html principal en este caso index.
     path('', include('apps.posts.urls')),
-    path('', include('apps.contacto.urls')),
-    path('about', about, name='about'),
-    path('registro', registro, name='registro'),
-    #path('', include('apps.usuario.urls')), # aca declaro la url de mi aplicacion contacto
-    path('', include('django.contrib.auth.urls')), # aca declaro la url de la aplicacion auth
-
     #path('posts/', posts, name = 'posts'),
-    # path('index', index, name='index'),
-    #path('', include('apps.posts.urls')), # aca declaro la url de mi aplicacion posts
-    #path('', include('apps.contacto.urls')), # aca declaro la url de mi aplicacion contacto
-    
     #pass
     
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
