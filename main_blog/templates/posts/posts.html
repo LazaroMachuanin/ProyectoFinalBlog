@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block contenido %}
+<title>{% block title %} posts {% endblock title %}</title>
+   
+    <div class= "container-fluid" style= "margin: 20px;">
+        
+            {% for i in posts %}
+            
+            <br>
+            <h2><li>{{ i.titulo}}</li></h2>
+            <li>{{ i.categoria}}</li>        
+            <li>{{ i.texto}}</li>
+            
+            <img src="{{ i.imagen.url }}" alt="" width="300" height="200">
+            <br>
+            <br>
+            <button
+                type="button"
+                class="btn btn-primary"
+            >               
+            <a id="boton_post" href="{% url 'apps.posts:post_individual' i.id %}">
+                ingresa a este post
+            </a>
+            </button>
+            <br><br>
+            {% empty %}
+            <h1>No hay registros</h1>
+
+    
+        {% endfor %}
+    </div>
+{% endblock contenido %}

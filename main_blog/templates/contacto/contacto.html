@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block contenido %}
+<title>{% block title %} contacto {% endblock title %}</title>
+
+
+   <div class="center">
+      <div class="footer_links">
+         
+         <form method= "POST">
+            <fieldset>
+               
+                  <h1>Formulario de contacto</h1>
+                  <br>
+                  <table>
+                  {% csrf_token %}
+                  {{ form }}
+                  </table> 
+                  <div class="center">
+                     <button class="reply_bt">Enviar</button>
+                  </div>
+            
+            </fieldset>
+         </form>
+      </div>
+   </div>
+
+
+{% endblock contenido %}

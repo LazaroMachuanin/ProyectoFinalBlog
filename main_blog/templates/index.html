@@ -1,0 +1,242 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+      <!-- end header -->
+      <title>{% block title %} inicio {% endblock title %}</title>
+      <!-- revolution slider -->
+      <div class="banner-slider">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-7">
+                  <div id="slider_main" class="carousel slide" data-ride="carousel">
+                     <!-- The slideshow -->
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <img src="{% static 'images/lider_1.png' %}" alt="#" style="width: 800px; height: 420px;"/>
+                        </div>
+                        <div class="carousel-item">
+                           <a href="{% url 'apps.posts:post_individual' 2 %}"><img src="{% static 'images/lider_2.png' %}" alt="#" /></a>
+                        </div>
+                        <div class="carousel-item">
+                           <img src="{% static 'images/lider_3.png' %}" alt="#" />
+                        </div>
+                        <div class="carousel-item">
+                           <a href="{% url 'apps.posts:post_individual' 3 %}"><img src="{% static 'images/casa-inteligente.jpg' %}" alt="#" style="width: 800px; height: 420px;" /></a>
+                        </div>
+                     </div>
+                     <!-- Left and right controls -->
+                     <a class="carousel-control-prev" href="#slider_main" data-slide="prev">
+                     <i class="fa fa-angle-left" aria-hidden="true"></i>
+                     </a>
+                     <a class="carousel-control-next" href="#slider_main" data-slide="next">
+                     <i class="fa fa-angle-right" aria-hidden="true"></i>
+                     </a>
+                  </div>
+               </div>
+               <div class="col-md-5">
+                  <div class="full slider_cont_section">
+                     <h4>Posts</h4>
+                     <h3><span class="orange_color">Destacados</span></h3>
+                     <p>Esta es una selección de articulos, que te pueden interesar, como para ir conociendo nuestros contenidos.</p>
+                     <p>Tambien puedes consultar todos los posts en nuestra seccion ¨POSTS¨ en la barra superior.</p>
+                     
+                     <div class="button_section">
+                        <a href="{% url 'apps.posts:posts' %}">Leer mas</a>
+                        <a href="{% url 'apps.contacto:contacto' %}">Contacto</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end revolution slider -->
+      <!-- section --> 
+      <div class="section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="heading">
+                     <h3>Nuestras <span class="orange_color">Publicaciones</span></h3>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <img src={% static "images/blog1.png" %} alt="#" />
+               </div>
+               <div class="col-md-6">
+                  <div class="full blog_cont">
+                     <h4>La cámara más grande e impresionante del año.</h4>
+                     <h5> 14 mayo 2019 5 READ</h5>
+                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row margin_top_30">
+               <div class="col-md-6">
+                  <img src={% static "images/blog2.png" %} alt="#" />
+               </div>
+               <div class="col-md-6">
+                  <div class="full blog_cont">
+                     <h4>Lo aprendí Android en 3 años</h4>
+                     <h5>14 mayo 2019  5 READ</h5>
+                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row margin_top_30">
+               <div class="col-md-12">
+                  <div class="button_section full center margin_top_30">
+                     <a style="margin:0;" href="about.html">leer mas</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end section -->
+      <!-- section --> 
+      <div class="section layout_padding dark_bg">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="heading">
+                     <h3>Marketing</h3>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <img src={% static "images/marketing_img.png" %} alt="#" />
+               </div>
+               <div class="col-md-6">
+                  <div class="full blog_cont">
+                     <h3 class="white_font">Donde puedo conseguir algunos</h3>
+                     <h5 class="grey_font">March 19 2019 5 READ</h5>
+                     <p class="white_font">Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría ha sufrido alguna alteración, mediante humor inyectado o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, debes asegurarte de que no haya nada vergonzoso escondido en medio del texto. Todos los generadores de Lorem Ipsum en Internet tienden a repetir fragmentos predefinidos según sea necesario, lo que lo convierte en el primer generador verdadero en Internet. Utiliza un diccionario de más de 200 palabras latinas, combinadas g para usar un pasaje de Lorem Ipsum, debes asegurarte de que no haya nada vergonzoso escondido en medio del texto. Todos los generadores de Lorem Ipsum en Internet tienden a repetir fragmentos predefinidos según sea necesario, lo que lo convierte en el primer generador verdadero.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end section -->
+      <!-- section -->
+      <section class="layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="heading" style="padding-left: 15px;padding-right: 15px;">
+                     <h4 style="border-bottom: solid #333 1px;">Comments / 2</h4>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full comment_blog_line">
+                     <div class="row">
+                        <div class="col-md-1">
+                           <img src={% static "images/c_1.png" %} alt="#" />
+                        </div>
+                        <div class="col-md-9">
+                           <div class="full contact_text">
+                              <h3>Veniam</h3>
+                              <h4>Posted on Jan 10 / 2017 at 06:53 am</h4>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet 
+                                 dolore magna aliquam erat volutpat.
+                              </p>
+                           </div>
+                        </div>
+                        <div class="col-md-2">
+                           <a class="reply_bt" href="#">Reply</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="full comment_blog_line">
+                     <div class="row">
+                        <div class="col-md-1">
+                           <img src={% static "images/c_2.png" %} alt="#" />
+                        </div>
+                        <div class="col-md-9">
+                           <div class="full contact_text">
+                              <h3>Jack</h3>
+                              <h4>Posted on Jan 10 / 2017 at 06:53 am</h4>
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet 
+                                 dolore magna aliquam erat volutpat.
+                              </p>
+                           </div>
+                        </div>
+                        <div class="col-md-2">
+                           <a class="reply_bt" href="#">Reply</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row margin_top_30">
+               <div class="col-md-12 margin_top_30">
+                  <div class="heading" style="padding-left: 15px;padding-right: 15px;">
+                     <h4>Post : Tu comentario</h4>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full comment_form">
+                     <form action="index.html">
+                        <fieldset>
+                           <div class="col-md-12">
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <input type="text" name="nombre" placeholder="Nombre" required="#" />
+                                    <input type="email" name="email" placeholder="Email" required="#" />
+                                 </div>
+                                 <div class="col-md-6">
+                                    <textarea placeholder="Comentario"></textarea>
+                                 </div>
+                              </div>
+                              <div class="row margin_top_30">
+                                 <div class="col-md-12">
+                                    <div class="center">
+                                       <button>Enviar</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </fieldset>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end section -->
+      <!-- section --> 
+      <div class="section layout_padding blog_blue_bg light_silver">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <div class="heading">
+                     <h3>Blog</h3>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-8 offset-md-2">
+                  <div class="full">
+                     <div class="big_blog">
+                        <img class="img-responsive" src={% static "images/blog_1.png" %} alt="#" />
+                     </div>
+                     <div class="blog_cont_2">
+                        <h3>Por qué lo usamos</h3>
+                        <p class="sublittle">March 19 2019  5 READ</p>
+                        <p>Es un hecho establecido desde hace mucho tiempo que un lector se distraerá con el contenido legible de una página cuando mire su diseño. El objetivo de usar Lorem Ipsum es que tiene una distribución más o menos normal de letras en lugar de usar Contenido aquí contenido aquí haciendo...</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end section -->
+      <!-- footer -->
+      {% endblock contenido %}
+      
