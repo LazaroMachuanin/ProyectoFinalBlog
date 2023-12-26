@@ -8,12 +8,19 @@
 <div class="center my-5 ">
    <div class="center my-5 ">
       <div class="footer_links my-5 ">
+         <center>
+         <h1 class="h1">Contáctanos</h1>
+         <p>
+            Cualquier duda o sugerencia puedes hacerla desde aquí. Estamos para ayudarte
+         </p>
          
+         <h1>{{ mensaje }}</h1>
          <form method= "POST">
             <fieldset>
                
-                  <h1>Formulario de contacto</h1>
+                  <h1 class="h1">Formulario de contacto</h1>
                   <br>
+                  
                   <table>
                   {% csrf_token %}
                   {{ form }}
@@ -24,6 +31,7 @@
             
             </fieldset>
          </form>
+         </center>
       </div>
    </div>
 </div>

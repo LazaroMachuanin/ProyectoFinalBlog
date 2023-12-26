@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<div class= "center my-5">
+  <div class= "center my-5">
+      <div class= "center my-5">
+<div class="container">
+    <div class="row">
+    
+      <thead class="thead-dark">
+      </thead>
+      <tbody>
+        {% for post in posts %}
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.titulo }}</h5>
+              <a href="{% url 'apps.posts:post_individual' post.id %}" class="btn btn-success">Ingresar</a>
+              <a href="{% url 'apps.posts:eliminar_post' post.id %}" class="btn btn-danger">Eliminar</a>
+            </div>
+          </div>
+        </div>
+        {% empty %}
+        <div class="col-md-12">
+          <p>No hay Posts</p>
+        </div>
+        {% endfor %}
+      </div>
+      </div>
+      </tbody>
+    
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+

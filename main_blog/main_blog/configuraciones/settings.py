@@ -23,15 +23,25 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k81**!xj_n+1zmdm0@@*5^hgb7c^dpfft-9spr#sqp1)z+r5f('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
-AUTH_USER_MODEL ='usuario.usuario' #agregamos para usuario
-#AUTH_USER_MODEL ='usuario.usuario' #agregamos para usuario
-#AUTH_USER_MODEL ='usuario.Usuario'
+AUTH_USER_MODEL = 'usuario.Usuario' #agregamos para usuario
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL__HOST_USER = 'lmachuanin@gmail.com'
+EMAIL__HOST_PASSWORD = '123456lem'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL= '/'
+
 
 # Application definition
+SITE_NAME = 'GRUPO3'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,6 +54,8 @@ INSTALLED_APPS = [
     'apps.posts',
     'apps.contacto',
     'apps.usuario',
+    
+
     
 ]
 

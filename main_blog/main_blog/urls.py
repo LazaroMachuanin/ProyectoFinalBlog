@@ -20,16 +20,16 @@ from django.conf import settings #esta linea agregue
 from django.conf.urls.static import static #esta linea agregue
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
 from .views import IndexView, about, registro
+#from .views import pagina_404
 
+#handler404 = pagina_404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', index, name='index'), #esto es A
     path('', IndexView.as_view(), name='index'),
     path('about', about, name='about'),
-    # path('index', index, name='index'),
     path('registro', registro, name='registro'),
     path('', include('apps.posts.urls')), # aca declaro la url de mi aplicacion posts
     path('', include('apps.contacto.urls')), # aca declaro la url de mi aplicacion contacto
@@ -42,5 +42,5 @@ urlpatterns = [
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 #esta linea agregue
-# if settings.DEBUG:
-#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

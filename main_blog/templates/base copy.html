@@ -1,5 +1,5 @@
 {% load static %}
-{% load colaborador_tags %}
+
 <!DOCTYPE html>
 <html lang="es-ar">
    <head>
@@ -38,9 +38,9 @@
          <div class="loader"><img src={% static "images/loading.gif" %} alt="" /></div>
       </div>
       <!-- fin loader -->
-
-      <!-- header ' agregado "fixed-top" para fijar encabezado'  -->
-      <header class="fixed-top">
+      
+      <!-- header ' agregado "fixed-top" para fijar encabezado'-->
+      <header class="fixed-top" >
          <!-- header inner -->
          <div class="container-fluid">
             <div class="row">
@@ -61,48 +61,32 @@
                                  <a href="{% url 'index' %}">Inicio</a>
                               </li>
                               <li>
+                                 <a href="{% url 'about' %}">Nosotros</a>
+                              </li>
+                              <li>
                                  <a href="{% url 'apps.posts:posts' %}">Posts</a>
                               </li>
                               <li>
-                                 <a href="{% url 'about' %}">Sobre Nosotros</a>
+                                 <a href="blog.html">Blog</a>
                               </li>
                               <li>
                                  <a href="{% url 'apps.contacto:contacto' %}">Contacto</a>
-                              
-                              <div class="dropdown">
-                                 </li>
-                                 {% if user.is_authenticated %}
-                                 <li><a href="{% url 'apps.usuario:logout' %}">{{ user.username }}: Logout</a></li>
-                                 <!--<div class="dropdown-content">
-                                    <table>
-                                    <tr>
-                                       {% if user.is_superuser or request.user|has_group:"Colaborador"  %}
-                                          <td><a href="#">Lista de usuarios</a></td>  
-                                       {% endif %}
-                                    </tr>
-                                    <tr>
-                                       <td><a href="#">Lista de Categorías</a></td>  
-                                    </tr>
-                                    <tr>
-                                       <td><a href="{% url 'apps.posts:posts' %}">Lista de Posts</a></td>  
-                                    </tr>
-                                    </table>
-                                 </div>-->
-                                 {% else %}
-                                 <li>
-                                    <a href="{% url 'apps.usuario:registrar' %}">Registrarse</a>
-                                 </li>
-                                 <li>
-                                    <a href="{% url 'apps.usuario:login' %}">Login</a>
-                                 </li>
-                                 {% endif %}
-                                 
-                                 
-                                 <li>
-                                    <!--<a href="#"><img src="{% static 'images/search_icon.png' %}" alt="#" /></a>-->
-                                 </li>
-                                 
-                              </div>
+                              </li>
+                              {% if user.is_authenticated %}
+                              <li>
+                                 <a href="{% url 'apps.usuario:logout' %}">Logout</a>
+                              </li>
+                              {% else %}
+                              <li>
+                                 <a href="{% url 'apps.usuario:login' %}">Login</a>
+                              </li>
+                              {% endif %}
+                              <li>
+                                 <a href="{% url 'apps.usuario:registrar' %}">Registrarse</a>
+                              </li>
+                              <li>
+                                 <a href="#"><img src="{% static 'images/search_icon.png' %}" alt="#" /></a>
+                              </li>
                            </ul>
                         
                         </nav>
@@ -126,18 +110,49 @@
       <footer>
          <div class="container">
             <div class="row">
-              <div class="col order-last">
-               <a href="#"><img src={% static "images/logo2.png" %} alt="#" /></a>
-              </div>
-              <div class="col order-first">
-               <ul class="contact_information">
-                  <li><span><img src={% static "images/location_icon.png" %} alt="#" /></span><span class="text_cont">Plaza central 0<br>Resistencia-Chaco</span></li>
-                  <li><span><img src={% static "images/phone_icon.png" %} alt="#" /></span><span class="text_cont">3624603379<br>3624603379</span></li>
-                  <li><span><img src={% static "images/mail_icon.png" %} alt="#" /></span><span class="text_cont">demo@gmail.com<br>support@gmail.com</span></li>
-               </ul>
-              </div>
+               <div class="col-lg-4 col-md-6">
+                  <a href="#"><img src={% static "images/logo2.png" %} alt="#" /></a>
+                  <ul class="contact_information">
+                     <li><span><img src={% static "images/location_icon.png" %} alt="#" /></span><span class="text_cont">London 145<br>United Kingdom</span></li>
+                     <li><span><img src={% static "images/phone_icon.png" %} alt="#" /></span><span class="text_cont">987 654 3210<br>987 654 3210</span></li>
+                     <li><span><img src={% static "images/mail_icon.png" %} alt="#" /></span><span class="text_cont">demo@gmail.com<br>support@gmail.com</span></li>
+                  </ul>
+                  <ul class="social_icon">
+                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                     <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-2 col-md-6">
+                  <div class="footer_links">
+                     <h3>links</h3>
+                     <ul>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Features</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Evens</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Markrting</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Blog</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Testimonial</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i> Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+                  <div class="footer_links">
+                     <h3>Instagram</h3>
+                     <ol>
+                        <li><img class="img-responsive" src={% static "images/footer_blog.png" %} alt="#" /></li>
+                        <li><img class="img-responsive" src="images/footer_blog.png" alt="#" /></li>
+                        <li><img class="img-responsive" src="images/footer_blog.png" alt="#" /></li>
+                        <li><img class="img-responsive" src="images/footer_blog.png" alt="#" /></li>
+                     </ol>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-md-6">
+               </div>
             </div>
-          </div>
+         </div>
       </footer>
       <div class="cpy">
          <div class="container">
@@ -160,4 +175,3 @@
       <script src={% static "js/custom.js" %}></script>
    </body>
 </html>
-

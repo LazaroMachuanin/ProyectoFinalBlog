@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+<title> {% block title %} Categorías {% endblock title %} </title>
+{% block contenido %}
+
+    <div class="container">
+        <table class="table table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th>Nombre</th>
+              <th>Posts</th>
+              <th>Eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for categoria in categorias %}
+            <tr>
+              <td>{{ categoria.nombre }}</td>
+              <td><a href="{% url 'apps.posts:post_por_categoria' pk=categoria.pk %}" class="btn btn-success">Ver posts</a></td>
+              <td><a href="{% url 'apps.posts:eliminar_categoria' pk=categoria.pk %}" class="btn btn-danger">Eliminar</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="3">No hay categorías</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      
+
+{% endblock %}
+
+
+<!--<div class="container">
+        <div class="row">
+          {% for categoria in categorias %}
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ categoria.nombre }}</h5>
+                <a href="{% url 'apps.posts:post_por_categoria' pk=categoria.pk %}" class="btn btn-success">Ingresar</a>
+                <a href="{% url 'apps.posts:eliminar_categoria' pk=categoria.pk %}" class="btn btn-danger">Eliminar</a>
+                 
+              </div>
+            </div>
+          </div>
+          {% empty %}
+          <div class="col-md-12">
+            <p>No hay categorías</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>-->
+
+
+
+
+
+<!--<section class="container py-5" style="margin: 200px;">
+    <div class="row">
+        {% for categoria in categorias %}
+        <div class="col-md-12 p-5">
+            <h4 class="text-center mt-3 mb-3">{{ categoria.nombre }}</h4>
+
+                <p class="text-center"><a class="btn btn-success" href="{% url 'apps.posts:post_por_categoria' pk=categoria.pk %}">Ingresá</a></p>
+                <p class="text-center"><a class="btn btn-warning" href="{% url 'apps.posts:eliminar_categoria' pk=categoria.pk %}">Eliminar</a></p>
+
+        {% empty %}
+            <h3 class="text-center mt-3 mb-3">No hay categorías</h3>
+        {% endfor %}
+        </div>
+    </div>
+</section>
+-->
+<!-- FALTA CREAR POST POR CATEGORIA -->

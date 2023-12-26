@@ -1,37 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
 
-<title>{% block title %} Registro de usuario {% endblock title %}</title>
+<title>{% block title %} Registro de Usuarios {% endblock title %}</title>
 
 {% block contenido %}
-
+<center>
 <div class="center my-3 ">
 <div class="center my-5">
     <div class="footer_links my-5">
     
        <form method= "POST">
             <fieldset>
-             
-                <h1 class="h1">Formulario de contacto</h1>
+            
+                <h1 class="h1">Registro de Usuarios</h1>
                 <br>
                 <div class="messages">
                     {% for message in messages %}
-                    <table{% if message.tags %} class="{{ message.tags}}"{%  endif %}>{{ message }}</table>
+                        <table{% if message.tags %} class="{{ message.tags}}"{% endif %}>{{ message }}</table>
                     {% endfor %}
                 </div>
                 <br>
                 {% csrf_token %}
-                
+                <div class="container-fluid">
                     <table> {{ form }} </table>
-                
+                </div>
                 <br><br>
                 <button type="submit" class="btn btn-success btn-lg px-3">Registrar</button>
-          
-          
+
+
             </fieldset>
         </form>
     </div>
- </div>
 </div>
-
- {% endblock contenido %}
+</div>
+</center>
+{% endblock contenido %}

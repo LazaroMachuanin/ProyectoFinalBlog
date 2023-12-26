@@ -1,36 +1,70 @@
 {% extends "base.html" %}
 {% load static %}
-
-
-
+{% load colaborador_tags %}
 {% block contenido %}
+<div class= "center my-5">
+    <div class= "center my-5">
+        <div class= "center my-5">
 <title>{% block title %} posts {% endblock title %}</title>
-   
-    <div class= "container-fluid" style= "margin: 20px;">
-        
-            {% for i in posts %}
-            
-            <br>
-            <h2><li>{{ i.titulo}}</li></h2>
-            <li>{{ i.categoria}}</li>        
-            <li>{{ i.texto}}</li>
-            
-            <img src="{{ i.imagen.url }}" alt="" width="300" height="200">
-            <br>
-            <br>
-            <button
-                type="button"
-                class="btn btn-primary"
-            >               
-            <a id="boton_post" href="{% url 'apps.posts:post_individual' i.id %}">
-                ingresa a este post
-            </a>
-            </button>
-            <br><br>
-            {% empty %}
-            <h1>No hay registros</h1>
 
+<div class= "container-fluid" style= "margin: 20px;">
+
+
+{% if user.is_superuser or request.user|has_group:"Colaborador"  %}
+<div class= "container-fluid" style= "margin: 30px;"> 
+    <button
+    type="button"
+    class="btn btn-primary"
+>         
+    <a id="boton_crear_post" href="{% url 'apps.posts:crear_post' %}">Crear Nuevo Post</a>
+    </button>
+</div> 
+{% endif %}
+
+                {% for i in posts %}
+                    
+                    <br>
+                    <h2><li>{{ i.titulo}}</li></h2>
+                    <li>{{ i.categoria}}</li>        
+                    <li>{{ i.texto}}</li>
+                    
+                    <img src="{{ i.imagen.url }}" alt="" width="300" height="200">
+                    <br>
+                    <br>
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                    >               
+                    <a id="boton_post" href="{% url 'apps.posts:post_individual' i.id %}">
+                        Ingresar al Post
+                    </a>
+                    </button>
+                    {% if user.is_authenticated %}
+                    <button
+                        type="button"
+                        class="btn btn-primary">               
+                    <a id="boton_modificar_post" href="{% url 'apps.posts:modificar_post' i.id %}">Modificar Post</a>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                    >               
+                    <a id="boton_eliminar_post" href="{% url 'apps.posts:eliminar_post' i.id %}">Eliminar Post</a>
+                    </button>
+                    {% endif %}
+                    
+                    <br><br>
+                    {% empty %}
+                    <h1>No hay registros</h1>
+                
+            
+                {% endfor %}
     
-        {% endfor %}
+            </div>
+        </div>
     </div>
+</div>
+
 {% endblock contenido %}
+
