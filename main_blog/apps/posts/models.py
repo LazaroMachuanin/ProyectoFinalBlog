@@ -6,11 +6,18 @@ from django.conf import settings
 
 
 #Categoria
+
+#def default_image():
+#    return 'media/default_category_image.png'  # Ruta a tu imagen por defecto
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=30, null=False)
-    texto = models.TextField(null=False)
-    imagen = models.ImageField(null=True, blank=True, upload_to='media', default='static/post_default.png')
+    descripcion = models.TextField(null=False, default='sin descripcion')
+    imagen = models.ImageField(upload_to='media', null=True, blank=True, default='static/post_default.png')
     texto =models.DateTimeField(default=timezone.now)
+    #imagen = models.ImageField(upload_to='media', null=True, blank=True, default=default_image)
+    #imagen = models.ImageField(null=True, blank=True, upload_to='media', default='media/post_default.png')
+
 
 
     def __str__(self):

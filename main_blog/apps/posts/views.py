@@ -6,7 +6,7 @@ from .forms import ComentarioForm, NuevaCategoriaForm,CrearPostForm
 from django.urls import reverse_lazy, reverse
 from django.contrib import messages
 from django.shortcuts import render
-from .models import Categoria
+#from .models import Categoria
 
 #post
 class PostListView(ListView):
@@ -102,10 +102,12 @@ class CategoriaCreateView(LoginRequiredMixin, CreateView):
 class CategoriaListView(ListView):
     model = Categoria
     template_name = 'posts/lista_categoria.html'
-    context_object_name = 'categorias'  # Cambiado a plural para mantener consistencia
-
+    context_object_name = 'categorias' # Cambiado a plural para mantener consistencia
+    
     def get_queryset(self):
         return Categoria.objects.all
+
+
 
 class CategoriaDeleteView(LoginRequiredMixin, DeleteView):
     model = Categoria

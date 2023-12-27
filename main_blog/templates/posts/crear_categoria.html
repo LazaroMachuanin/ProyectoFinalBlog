@@ -7,9 +7,9 @@
 <div class='main-container' style="text-align: center; margin-top: 12%; margin-bottom: 12%;"></div>
     <h1>Agregar Nueva Categoría</h1>
     
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form }}
         <input class="btn btn-success" type="submit" value="Agregar">
         <a class="btn btn-success" href="{% url 'apps.posts:lista_categoria' %}">Listar las Categorias</a>
     </form>
@@ -17,7 +17,7 @@
     <!--<div class="container-fluid" style="margin-top: 300px;">
         <a class="btn btn-success" href="{% url 'apps.posts:lista_categoria' %}">Listar las Categorias</a>
     </div>-->
-   
+
 </div>
 </center>
 {% endblock %}

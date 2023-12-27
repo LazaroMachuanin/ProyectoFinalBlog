@@ -16,8 +16,8 @@
             {% for categoria in categorias %}
             <tr>
               <td>{{ categoria.nombre }}</td>
-              <td><a href="{% url 'apps.posts:post_por_categoria' pk=categoria.pk %}" class="btn btn-success">Ver posts</a></td>
-              <td><a href="{% url 'apps.posts:eliminar_categoria' pk=categoria.pk %}" class="btn btn-danger">Eliminar</a></td>
+              <td><a href="{% url 'apps.posts:post_por_categoria' categoria.id %}" class="btn btn-success">Ver posts</a></td>   <!--pk=categoria.pk-->
+              <td><a href="{% url 'apps.posts:eliminar_categoria' categoria.id  %}" class="btn btn-danger">Eliminar</a></td>  <!--pk=categoria.pk-->
             </tr>
             {% empty %}
             <tr>

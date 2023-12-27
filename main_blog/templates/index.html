@@ -77,69 +77,44 @@
          <h3>Categorias</h3>
       
    </div>
+
+   
+   
       <main class="container mt-5 mb-5 border border-text-secondary">
+         
          <ul style="width: 100%; height: 470px; overflow: auto">
            <li>
             
              <div class="container py-3">
                <section class="card card-body">
+                  {% for categoria in categorias %}
                   <div class="row">
+                     
                      <div class="col-md-6">
                         <div class="text-center">
-                           <h1>Tecnologia</h1>
-                        <img  src={% static "images/blog1.png" %} alt="#" />
+                           <h1>{{ categoria.nombre }}</h1>
+                           <h1><a href="{% url 'apps.posts:post_por_categoria' categoria.id %}">{{ categoria.nombre }}</a></h1>
+                        <!--<img  src="{{ categoria.imagen.url }}" alt="">-->
                         </div>
+                        
                      </div>
                   <div class="col-md-6">
                         <div class="full blog_cont">
-                           <h4>La cámara más grande e impresionante del año.</h4>
-                           <h5> 14 mayo 2019 5 READ</h5>
-                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                           
+                           <h5> {{ categoria.texto }}</h5>
+                           <p>{{ categoria.descripcion }}</p>
                         </div>
                      </div>
                   </div>
-                  <div class="row margin_top_30">
-                     <div class="col-md-6">
-                        <h1>Pri</h1>
-                        <img  src={% static "images/blog2.png" %} alt="#" />
-                     </div>
-                     <div class="col-md-6">
-                        <div class="full blog_cont">
-                           <h4>Lo aprendí Android en 3 años</h4>
-                           <h5>14 mayo 2019  5 READ</h5>
-                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row margin_top_30">
-                     <div class="col-md-6">
-                        <img  src={% static "images/blog2.png" %} alt="#" />
-                     </div>
-                     <div class="col-md-6">
-                        <div class="full blog_cont">
-                           <h4>Lo aprendí Android en 3 años</h4>
-                           <h5>14 mayo 2019  5 READ</h5>
-                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="row margin_top_30">
-                     <div class="col-md-6">
-                        <img  src={% static "images/blog2.png" %} alt="#" />
-                     </div>
-                     <div class="col-md-6">
-                        <div class="full blog_cont">
-                           <h4>Lo aprendí Android en 3 años</h4>
-                           <h5>14 mayo 2019  5 READ</h5>
-                           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-                        </div>
-                     </div>
-                  </div>
+                  {% endfor %}
+                  
                </section>
              </div>
            </li>
          </ul>
        </main>
+       
+
 
        <!-- FIN OPCION DE TODAS LAS CATEGORIAS DENTRO DE UN SCROLLEABLE -->
 

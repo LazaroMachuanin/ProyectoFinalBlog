@@ -9,20 +9,18 @@
 
 {% if user.is_superuser or request.user|has_group:"Colaborador"  %}
 <div class="container py-5">
-<div class="container py-5">
-    <div class="row py-5" >
-        
-        {% if editing %}
-        <div class="row">
-            <div class="col text-end mt-5">
-            <a class="btn btn-success btn-lg" href="{% url 'apps.posts:crear_categoria' %}?next={% url 'apps.posts:posts_actualizar' pk=object.id %}">Crear Nueva categoría</a>
-        {% else %}
-            <a class="btn btn-success btn-lg" href="{% url 'apps.posts:crear_categoria' %}">Crear nueva categoría</a>
-        {% endif %}
-        
-            </div>
+    <div class="container py-5">
+    <div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            {% if editing %}
+                <a class="btn btn-success btn-lg" href="{% url 'apps.posts:crear_categoria' %}?next={% url 'apps.posts:posts_actualizar' pk=object.id %}">Crear Nueva categoría</a>
+            {% else %}
+                <a class="btn btn-success btn-lg" href="{% url 'apps.posts:crear_categoria' %}">Crear nueva categoría</a>
+            {% endif %}
         </div>
     </div>
+</div>
 </div>
 </div>
 
